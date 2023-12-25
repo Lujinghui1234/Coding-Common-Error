@@ -42,13 +42,10 @@ await callApi2(resName);
 ## 4.自测的时候没有覆盖到所有场景，比如某些数据没有填写直接提交，导致空数据场景报错，如：在undefined或null中解构某属性
 ## 5. 同一个api，页面call：cancel，但postman call：200
 ## 6. 线上dev环境和local页面不一致，检查dev版本是否最新，切换无痕浏览器清除缓存更新版本
-## 7. 不会发生变化的常量，通常写在组件外部
-要考虑书写位置会不会导致React重复渲染，这段代码30行如果写在组件里面，导致重复多次渲染页面卡死
-![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dc6d7422ecee4b40abaa9153e5fd2226~tplv-k3u1fbpfcp-watermark.image?)
-## 8. 使用react-router的location.state存储数据，刷新页面数据丢失
+## 7. 使用react-router的location.state存储数据，刷新页面数据丢失
 这个方案不是持久化存储数据方式，可替换为localStorage
-## 9. 不要滥用可选链，看为什么是空数据，是api原因还是前端代码写错了？有些明知道不会是空数据的，就不要加可选链了。
-## 10.常见ts报错：
+## 8. 不要滥用可选链，看为什么是空数据，是api原因还是前端代码写错了？有些明知道不会是空数据的，就不要加可选链了。
+## 9.常见ts报错：
 
 ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/912ef097268a48f780741251f314f871~tplv-k3u1fbpfcp-watermark.image?)
 答案：https://blog.csdn.net/qq_40864647/article/details/125764130
@@ -56,7 +53,7 @@ await callApi2(resName);
 最简单的方法是断言：
 
 ![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b13858456251461d879e5ee68fd8337a~tplv-k3u1fbpfcp-watermark.image?)
-## 11. 为什么不会发生变化的常量，要写在组件外面？
+## 10. 为什么不会发生变化的常量，要写在组件外面？
     
 ```js
 const data = '123';
