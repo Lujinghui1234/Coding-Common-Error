@@ -61,3 +61,18 @@ const Com = ():ReactElement=>{
     <div>hello world !</div>
 }
 ```
+## 11. setState数组不更新
+错误写法：
+    ```js
+    const [list,setList] = useState([]);
+    const data = await callApi();
+    setList(data);
+    const newList = list.map(item=>{
+        a:item.a;
+    });
+    //此处69行的list并不是最新的。
+    ```
+参考以下写法：
+![e03fed3e04d226de56b2c28664b79d83](https://github.com/Lujinghui1234/Coding-Common-Error/assets/109168485/a9a510f8-0feb-4b45-9676-dfd68a555154)
+
+## 12. 自定义hook执行多次
