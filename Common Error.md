@@ -67,10 +67,9 @@ const Com = ():ReactElement=>{
 const [list,setList] = useState([]);
 const data = await callApi();
 setList(data);
-const newList = list.map(item=>{
+const newList = list.map(item=>{//此处的list并不是最新的。
     a:item.a;
 });
-//此处69行的list并不是最新的。
 ```
  
 参考以下写法：
