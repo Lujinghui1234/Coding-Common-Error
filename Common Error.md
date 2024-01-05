@@ -43,7 +43,7 @@ await callApi2(resName);//考虑useState是否有必要？
 ## 5. 同一个api，页面call：cancel，但postman call：200
 ## 6. 线上dev环境和local页面不一致，检查dev版本是否最新，切换无痕浏览器清除缓存更新版本
 ## 7. 使用react-router的location.state存储数据，刷新页面数据丢失
-这个方案不是持久化存储数据方式，可替换为localStorage
+这个方案不是持久化存储数据方式，可替换为localStorage、redux-persist（redux的插件，刷新数据不丢失）
 ## 8. 不要滥用可选链，看为什么是空数据，是api原因还是前端代码写错了？有些明知道不会是空数据的，就不要加可选链了。
 ## 9.常见ts报错：
 
