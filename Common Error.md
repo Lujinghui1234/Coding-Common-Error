@@ -32,12 +32,12 @@ const resName = res.payload.data.name;
 setData(resName);
 await callApi2(data);//data还是''
 ```
-   问题：setState没有同步，还是拿着旧数据发请求。
+   问题：setState一直是异步行为，所以data还是旧数据。
    
    正确写法：
 ```js
 
-await callApi2(resName);
+await callApi2(resName);//考虑useState是否有必要？
 ```
 ## 4.自测的时候没有覆盖到所有场景，比如某些数据没有填写直接提交，导致空数据场景报错，如：在undefined或null中解构某属性
 ## 5. 同一个api，页面call：cancel，但postman call：200
