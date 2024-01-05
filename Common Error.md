@@ -36,11 +36,11 @@ await callApi2(data);//data还是''
    
    正确写法：
 ```js
-
 await callApi2(resName);//考虑useState是否有必要？
 ```
 ## 4.自测的时候没有覆盖到所有场景，比如某些数据没有填写直接提交，导致空数据场景报错，如：在undefined或null中解构某属性
 ## 5. 同一个api，页面call：cancel，但postman call：200
+因为postman和浏览器的环境不同，postman会设置了某些东西，用户使用环境也是浏览器，肯定要以浏览器为准。
 ## 6. 线上dev环境和local页面不一致，检查dev版本是否最新，切换无痕浏览器清除缓存更新版本
 ## 7. 使用react-router的location.state存储数据，刷新页面数据丢失
 这个方案不是持久化存储数据方式，可替换为localStorage、redux-persist（redux的插件，刷新数据不丢失）
@@ -53,8 +53,8 @@ await callApi2(resName);//考虑useState是否有必要？
 最简单的方法是断言：
 
 ![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b13858456251461d879e5ee68fd8337a~tplv-k3u1fbpfcp-watermark.image?)
-## 10. 为什么不会发生变化的常量，要写在组件外面？
-    
+## 10. 为什么不会发生变化的常量，要写在Function外面？
+因为写在Function里面，rerender的时候diff算法会去计算这个变量的值是否和上次一样，而写在外面不会，这样写可以省去计算消耗的时间。补充：写在Function外面的变量和import的资源在reRender时都不会去执行。
 ```js
 const data = '123';
 const Com = ():ReactElement=>{
