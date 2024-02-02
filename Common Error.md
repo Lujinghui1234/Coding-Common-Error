@@ -76,3 +76,6 @@ const newList = list.map(item=>{//此处的list并不是最新的。
 ![e03fed3e04d226de56b2c28664b79d83](https://github.com/Lujinghui1234/Coding-Common-Error/assets/109168485/a9a510f8-0feb-4b45-9676-dfd68a555154)
 
 ## 12. 自定义hook执行多次
+## 13. git commit 报错：pidtree\lib\pidtree.js    new Error: no matching pid found
+这个报错是因为本地进程太多了，解决方法是清理本地内存空间：清空回收站、关闭不使用的进程。
+## 14. 
