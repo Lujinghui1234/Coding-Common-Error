@@ -24,7 +24,7 @@ const newFormContent = {
 };
 console.log(rest);//rest不包含b了，没用到b就不要解构
 ```
-## 3. react中setState没有同步
+## 3. react中的setState是异步行为
 ```js
 const [data,setData] = useState('');
 const res = await callApi1();
@@ -77,6 +77,6 @@ const newList = list.map(item=>{//此处的list并不是最新的。
 
 ## 12. 自定义hook执行多次
 ## 13. git commit 报错：pidtree\lib\pidtree.js    new Error: no matching pid found
-这个报错是因为本地进程太多了，解决方法是清理本地内存空间：清空回收站、关闭不使用的进程。
+这个报错是因为本地进程太多了，解决方法是清理本地内存空间：清空回收站、关闭不使用的进程，关闭编辑器，直接用git bash操作。
 ## 14. 
 
