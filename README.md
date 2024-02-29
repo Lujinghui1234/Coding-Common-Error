@@ -71,8 +71,17 @@ const newList = list.map(item=>{//此处的list并不是最新的。
     a:item.a;
 });
 ```
- 
-参考以下写法：
+正确写法：
+```
+const [list,setList] = useState([]);
+const data = await callApi();
+const newList = [...list,...data];
+setList(newList);
+console.log(newList);//拿到最新的，如果打印list是拿不到的，但html中使用list会是最新的。
+```
+参考React文档：
+https://zh-hans.react.dev/reference/react/useState#ive-updated-the-state-but-logging-gives-me-the-old-value
+参考别人总结的资料：
 ![e03fed3e04d226de56b2c28664b79d83](https://github.com/Lujinghui1234/Coding-Common-Error/assets/109168485/a9a510f8-0feb-4b45-9676-dfd68a555154)
 
 ## 12. 自定义hook执行多次
